@@ -8,7 +8,10 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.1.1",
+    "babel-preset-stage-2": "^6.24.1",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
@@ -50,7 +53,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "webpack": "NODE_ENV=development webpack -wd --config=config/webpack.config.dev.js",
-    "express": "nodemon src/server/index.js"
+    "express": "nodemon --exec babel-node src/server/index.js"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -95,6 +98,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "nodemon": "^1.17.3"
   }
 }
